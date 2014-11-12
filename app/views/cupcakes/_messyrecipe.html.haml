@@ -1,0 +1,11 @@
+= form_tag rebake_path do |f|
+  .alert.alert-danger=@sign_in_error
+  .col-sm-6.col-sm-offset-3
+    .form-group
+      = label_tag :email
+      = email_field_tag :email, '', {'class' => 'form-control', 'placeholder' => 'cupcake@sprinkles.com'}
+    .form-group
+      = label_tag :password
+      = password_field_tag :password, '', {'class' => 'form-control'}
+    .form-group
+      = submit_tag "Sign in", class: "btn btn-lg btn-default"

@@ -1,0 +1,37 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %link{:href => "../../favicon.ico", :rel => "icon"}/
+    %title Cover Template for Bootstrap
+    = stylesheet_link_tag 'application'
+    = csrf_meta_tags
+    = javascript_include_tag "application"
+  %body
+    .site-wrapper
+      .site-wrapper-inner
+        .cover-container
+          .masthead.clearfix
+            .inner
+              %h3.masthead-brand
+                =link_to "Cupcakes", root_path
+              %ul.nav.masthead-nav
+                - if current_recipe
+                  %li= link_to  current_recipe.username.humanize
+                  %li= link_to "Sign Out", eat_path
+                - else
+                  %li= link_to "Sign In", rebake_path
+          .inner.cover
+            =yield
+          .mastfoot
+            .inner
+              %p
+                Cover template for
+                = succeed "," do
+                  %a{:href => "http://getbootstrap.com"} Bootstrap
+                = succeed "." do
+                  %a{:href => "https://twitter.com/mdo"} @mdo

@@ -1,0 +1,3 @@
+- if @cupcake.errors.present?
+  - @cupcake.errors.full_messages.each do |message|
+    .alert.alert-danger= message
