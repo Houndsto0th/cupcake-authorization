@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   post '/sign-up' => 'cupcakes#display'
   get '/sign-in' => 'cupcakes#rebake', as: :rebake
   post '/sign-in' => 'cupcakes#another_batch'
-  get '/sign-out' => 'cupcakes#eat', as: :eat
+  delete '/sign-out' => 'cupcakes#eat', as: :eat
 # The priority is based upon order of creation: first created -> highest priority.
 # See how all your routes lay out with "rake routes".
 

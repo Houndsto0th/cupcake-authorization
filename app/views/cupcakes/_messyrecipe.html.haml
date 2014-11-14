@@ -1,5 +1,6 @@
 = form_tag rebake_path do |f|
-  .alert.alert-danger=@sign_in_error
+  -if flash[:error]
+    .alert.alert-danger=flash[:error]
   .col-sm-6.col-sm-offset-3
     .form-group
       = label_tag :email

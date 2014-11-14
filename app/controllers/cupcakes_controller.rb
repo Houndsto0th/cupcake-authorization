@@ -27,7 +27,7 @@ class CupcakesController < ApplicationController
       session[:id] = cupcake.id
       redirect_to root_path
     else
-      @sign_in_error = "Username / password combination is invalid"
+      flash[:error]= "Username / password combination is invalid"
       render :rebake
     end
   end

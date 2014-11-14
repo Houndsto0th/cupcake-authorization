@@ -22,7 +22,7 @@
               %ul.nav.masthead-nav
                 - if current_recipe
                   %li= link_to  current_recipe.username.humanize
-                  %li= link_to "Sign Out", eat_path
+                  %li= link_to "Sign Out", eat_path, method: :delete, class: "link_to"
                 - else
                   %li= link_to "Sign In", rebake_path
           .inner.cover
